@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.9.6 on darwin)" generated="20221207 16:25:30.062" rpa="false" schemaversion="3">
+<suite id="s1" name="Search Items" source="/Users/yudhiprasetyo/PycharmProjects/FarmaCare/resources/features/search_items.robot">
+<test id="s1-t1" name="Scenario: Verify user able to search item and do filter price low to high" line="9">
+<kw name="Navigate to Home" library="base_setup" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221207 16:25:30.166" level="INFO">Opening browser 'chrome' to base url 'https://www.bookdepository.com/'.</msg>
+<status status="PASS" starttime="20221207 16:25:30.165" endtime="20221207 16:25:43.254"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221207 16:25:43.254" endtime="20221207 16:25:44.279"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:30.165" endtime="20221207 16:25:44.280"/>
+</kw>
+<kw name="Given user already in home page" library="home_step">
+<kw name="Brand Logo Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BRAND_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:25:44.280" endtime="20221207 16:25:44.732"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${BRAND_LOGO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:25:44.769" level="INFO">Element 'class:brand-link' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:25:44.732" endtime="20221207 16:25:44.769"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:44.280" endtime="20221207 16:25:44.769"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:44.280" endtime="20221207 16:25:44.769"/>
+</kw>
+<kw name="When user click Sign in link" library="home_step">
+<kw name="Click Link SignIn" library="home_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_SIGNIN}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:25:44.770" level="INFO">Clicking link 'link:Sign in/Join'.</msg>
+<status status="PASS" starttime="20221207 16:25:44.770" endtime="20221207 16:25:50.989"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:44.769" endtime="20221207 16:25:50.989"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:44.769" endtime="20221207 16:25:50.990"/>
+</kw>
+<kw name="And user input email &quot;${VALID_EMAIL}&quot; and password &quot;${VALID_PASSWORD}&quot;" library="home_step" sourcename="User input email &quot;${email}&quot; and password &quot;${password}&quot;">
+<kw name="Input Email" library="home_page">
+<arg>${email}</arg>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>class:signin-iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20221207 16:25:50.991" level="INFO">Selecting frame 'class:signin-iframe'.</msg>
+<status status="PASS" starttime="20221207 16:25:50.990" endtime="20221207 16:25:52.396"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:25:52.396" level="INFO">Typing text 'farma.yudhi.prasetyo@gmail.com' into text field 'ap_email'.</msg>
+<status status="PASS" starttime="20221207 16:25:52.396" endtime="20221207 16:25:53.723"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:50.990" endtime="20221207 16:25:53.723"/>
+</kw>
+<kw name="Input valid Password" library="home_page">
+<arg>${password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:25:53.724" level="INFO">Typing password into text field 'ap_password'.</msg>
+<msg timestamp="20221207 16:25:54.749" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221207 16:25:55.006" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221207 16:25:53.723" endtime="20221207 16:25:55.006"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:53.723" endtime="20221207 16:25:55.006"/>
+</kw>
+<kw name="Click Button SignIn" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SIGNIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:25:55.007" level="INFO">Clicking button 'signInSubmit'.</msg>
+<status status="PASS" starttime="20221207 16:25:55.006" endtime="20221207 16:25:56.084"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20221207 16:25:56.084" endtime="20221207 16:25:59.082"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:55.006" endtime="20221207 16:25:59.082"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:50.990" endtime="20221207 16:25:59.082"/>
+</kw>
+<kw name="Then user is successfully login" library="home_step">
+<kw name="Welcome Message is Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:25:59.083" endtime="20221207 16:25:59.284"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:25:59.304" level="INFO">Element 'class:message-success&gt;strong' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:25:59.284" endtime="20221207 16:25:59.304"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<arg>Welcome back</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221207 16:25:59.305" level="INFO">Verifying element 'class:message-success&gt;strong' contains exact text 'Welcome back'.</msg>
+<status status="PASS" starttime="20221207 16:25:59.304" endtime="20221207 16:25:59.324"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:59.083" endtime="20221207 16:25:59.325"/>
+</kw>
+<kw name="Hello Message is Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:25:59.325" endtime="20221207 16:25:59.432"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${HELLO_MESSAGE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:25:59.521" level="INFO">Element 'class:desktop-only&gt;span' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:25:59.432" endtime="20221207 16:25:59.521"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HELLO_MESSAGE}</arg>
+<arg>Hello Yudhi Prasetyo</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221207 16:25:59.521" level="INFO">Verifying element 'class:desktop-only&gt;span' contains exact text 'Hello Yudhi Prasetyo'.</msg>
+<status status="PASS" starttime="20221207 16:25:59.521" endtime="20221207 16:25:59.536"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:59.325" endtime="20221207 16:25:59.536"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:59.082" endtime="20221207 16:25:59.536"/>
+</kw>
+<kw name="When user search &quot;${KEYWORD}&quot;" library="home_step" sourcename="User search &quot;${keyword}&quot;">
+<kw name="Input Search Keyword" library="home_page">
+<arg>${keyword}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_SEARCH}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:25:59.538" level="INFO">Typing text 'Harry Potter' into text field 'name:searchTerm'.</msg>
+<status status="PASS" starttime="20221207 16:25:59.537" endtime="20221207 16:25:59.759"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:59.536" endtime="20221207 16:25:59.759"/>
+</kw>
+<kw name="Click Button Search" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SEARCH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:25:59.760" level="INFO">Clicking button 'class:header-search-btn'.</msg>
+<status status="PASS" starttime="20221207 16:25:59.760" endtime="20221207 16:26:02.178"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:59.760" endtime="20221207 16:26:02.178"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:59.536" endtime="20221207 16:26:02.179"/>
+</kw>
+<kw name="And user select filter &quot;${FILTER}&quot;" library="home_step" sourcename="User select filter &quot;${filter}&quot;">
+<kw name="Select Filter is Displayed" library="home_page">
+<arg>${filter}</arg>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SELECT_FILTER}</arg>
+<arg>${filter}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221207 16:26:02.180" level="INFO">Selecting options from selection list 'name:searchSortBy' by value price_low_high.</msg>
+<status status="PASS" starttime="20221207 16:26:02.179" endtime="20221207 16:26:03.623"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:02.179" endtime="20221207 16:26:03.624"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:02.179" endtime="20221207 16:26:03.624"/>
+</kw>
+<kw name="Then user see the item filtered by price low to high" library="home_step">
+<kw name="Get Label Selected" library="home_page">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Price, low to high</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221207 16:26:03.624" endtime="20221207 16:26:03.740"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:03.624" endtime="20221207 16:26:03.740"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:03.624" endtime="20221207 16:26:03.740"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221207 16:26:03.740" endtime="20221207 16:26:03.836"/>
+</kw>
+<status status="PASS" starttime="20221207 16:25:30.165" endtime="20221207 16:26:03.836"/>
+</test>
+<test id="s1-t2" name="Scenario: Verify user able to add more items by click plus icon in add to cart page" line="18">
+<kw name="Navigate to Home" library="base_setup" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221207 16:26:03.837" level="INFO">Opening browser 'chrome' to base url 'https://www.bookdepository.com/'.</msg>
+<status status="PASS" starttime="20221207 16:26:03.837" endtime="20221207 16:26:16.678"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221207 16:26:16.679" endtime="20221207 16:26:17.475"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:03.837" endtime="20221207 16:26:17.475"/>
+</kw>
+<kw name="Given user already in home page" library="home_step">
+<kw name="Brand Logo Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BRAND_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:26:17.476" endtime="20221207 16:26:17.923"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${BRAND_LOGO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:26:17.961" level="INFO">Element 'class:brand-link' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:26:17.923" endtime="20221207 16:26:17.961"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:17.476" endtime="20221207 16:26:17.961"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:17.476" endtime="20221207 16:26:17.962"/>
+</kw>
+<kw name="When user click Sign in link" library="home_step">
+<kw name="Click Link SignIn" library="home_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_SIGNIN}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:17.962" level="INFO">Clicking link 'link:Sign in/Join'.</msg>
+<status status="PASS" starttime="20221207 16:26:17.962" endtime="20221207 16:26:24.790"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:17.962" endtime="20221207 16:26:24.790"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:17.962" endtime="20221207 16:26:24.791"/>
+</kw>
+<kw name="And user input email &quot;${VALID_EMAIL}&quot; and password &quot;${VALID_PASSWORD}&quot;" library="home_step" sourcename="User input email &quot;${email}&quot; and password &quot;${password}&quot;">
+<kw name="Input Email" library="home_page">
+<arg>${email}</arg>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>class:signin-iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20221207 16:26:24.791" level="INFO">Selecting frame 'class:signin-iframe'.</msg>
+<status status="PASS" starttime="20221207 16:26:24.791" endtime="20221207 16:26:26.207"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:26.208" level="INFO">Typing text 'farma.yudhi.prasetyo@gmail.com' into text field 'ap_email'.</msg>
+<status status="PASS" starttime="20221207 16:26:26.208" endtime="20221207 16:26:27.999"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:24.791" endtime="20221207 16:26:27.999"/>
+</kw>
+<kw name="Input valid Password" library="home_page">
+<arg>${password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:28.000" level="INFO">Typing password into text field 'ap_password'.</msg>
+<msg timestamp="20221207 16:26:28.855" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221207 16:26:28.974" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221207 16:26:27.999" endtime="20221207 16:26:28.974"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:27.999" endtime="20221207 16:26:28.974"/>
+</kw>
+<kw name="Click Button SignIn" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SIGNIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:28.974" level="INFO">Clicking button 'signInSubmit'.</msg>
+<status status="PASS" starttime="20221207 16:26:28.974" endtime="20221207 16:26:29.694"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20221207 16:26:29.694" endtime="20221207 16:26:31.890"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:28.974" endtime="20221207 16:26:31.890"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:24.791" endtime="20221207 16:26:31.890"/>
+</kw>
+<kw name="Then user is successfully login" library="home_step">
+<kw name="Welcome Message is Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:26:31.891" endtime="20221207 16:26:31.953"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:26:32.016" level="INFO">Element 'class:message-success&gt;strong' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:26:31.953" endtime="20221207 16:26:32.016"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<arg>Welcome back</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221207 16:26:32.016" level="INFO">Verifying element 'class:message-success&gt;strong' contains exact text 'Welcome back'.</msg>
+<status status="PASS" starttime="20221207 16:26:32.016" endtime="20221207 16:26:32.151"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:31.891" endtime="20221207 16:26:32.152"/>
+</kw>
+<kw name="Hello Message is Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:26:32.152" endtime="20221207 16:26:32.263"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${HELLO_MESSAGE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:26:32.349" level="INFO">Element 'class:desktop-only&gt;span' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:26:32.264" endtime="20221207 16:26:32.349"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HELLO_MESSAGE}</arg>
+<arg>Hello Yudhi Prasetyo</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221207 16:26:32.350" level="INFO">Verifying element 'class:desktop-only&gt;span' contains exact text 'Hello Yudhi Prasetyo'.</msg>
+<status status="PASS" starttime="20221207 16:26:32.349" endtime="20221207 16:26:32.363"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:32.152" endtime="20221207 16:26:32.363"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:31.891" endtime="20221207 16:26:32.363"/>
+</kw>
+<kw name="When user search &quot;${KEYWORD1}&quot;" library="home_step" sourcename="User search &quot;${keyword}&quot;">
+<kw name="Input Search Keyword" library="home_page">
+<arg>${keyword}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_SEARCH}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:32.364" level="INFO">Typing text 'Harry Potter and the Chamber of Secrets' into text field 'name:searchTerm'.</msg>
+<status status="PASS" starttime="20221207 16:26:32.364" endtime="20221207 16:26:33.022"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:32.363" endtime="20221207 16:26:33.022"/>
+</kw>
+<kw name="Click Button Search" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SEARCH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:33.022" level="INFO">Clicking button 'class:header-search-btn'.</msg>
+<status status="PASS" starttime="20221207 16:26:33.022" endtime="20221207 16:26:36.578"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:33.022" endtime="20221207 16:26:36.578"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:32.363" endtime="20221207 16:26:36.578"/>
+</kw>
+<kw name="And user click the first item to the basket" library="home_step">
+<kw name="Click Button Add to Cart" library="home_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${SELECT_ATC_FIRST_ITEM}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:36.579" level="INFO">Clicking link 'class:book-item:first-of-type&gt;div.item-actions&gt;div&gt;a'.</msg>
+<status status="PASS" starttime="20221207 16:26:36.579" endtime="20221207 16:26:36.935"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221207 16:26:41.937" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221207 16:26:36.935" endtime="20221207 16:26:41.937"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:36.579" endtime="20221207 16:26:41.938"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:36.578" endtime="20221207 16:26:41.938"/>
+</kw>
+<kw name="And user go to basket/checkout page" library="home_step">
+<kw name="Click Button Basket/Checkout" library="home_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${BUTTON_BASKET}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:41.940" level="INFO">Clicking link 'class:basket-info&gt;a:last-of-type'.</msg>
+<status status="PASS" starttime="20221207 16:26:41.939" endtime="20221207 16:26:43.972"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:41.939" endtime="20221207 16:26:43.973"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:41.939" endtime="20221207 16:26:43.973"/>
+</kw>
+<kw name="And user add more qty to &quot;${ADD_QTY}&quot;" library="home_step" sourcename="User add more qty to &quot;${filter_add_qty}&quot;">
+<kw name="Select Add Quantity" library="home_page">
+<arg>${filter_add_qty}</arg>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SELECT_QTY}</arg>
+<arg>${filter_adjust_qty}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221207 16:26:43.974" level="INFO">Selecting options from selection list 'Qty_0' by value 5.</msg>
+<status status="PASS" starttime="20221207 16:26:43.973" endtime="20221207 16:26:45.889"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221207 16:26:45.889" endtime="20221207 16:26:45.972"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:43.973" endtime="20221207 16:26:45.972"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:43.973" endtime="20221207 16:26:45.972"/>
+</kw>
+<kw name="And user reduce qty to &quot;${REDUCE_QTY}&quot;" library="home_step" sourcename="User reduce qty to &quot;${filter_reduce_qty}&quot;">
+<kw name="Select Add Quantity" library="home_page">
+<arg>${filter_reduce_qty}</arg>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SELECT_QTY}</arg>
+<arg>${filter_adjust_qty}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221207 16:26:45.973" level="INFO">Selecting options from selection list 'Qty_0' by value 3.</msg>
+<status status="PASS" starttime="20221207 16:26:45.973" endtime="20221207 16:26:48.215"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221207 16:26:48.215" endtime="20221207 16:26:48.224"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:45.973" endtime="20221207 16:26:48.224"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:45.973" endtime="20221207 16:26:48.224"/>
+</kw>
+<kw name="Then user see the item is correct after adjust qty" library="home_step">
+<kw name="Get Label Qty Cart" library="home_page">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221207 16:26:48.225" endtime="20221207 16:26:48.241"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:48.225" endtime="20221207 16:26:48.241"/>
+</kw>
+<kw name="Click Button Remove" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_REMOVE_CART}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:26:48.241" level="INFO">Clicking button 'class:btn.remove-btn'.</msg>
+<status status="PASS" starttime="20221207 16:26:48.241" endtime="20221207 16:26:49.765"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:48.241" endtime="20221207 16:26:49.765"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:48.225" endtime="20221207 16:26:49.766"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221207 16:26:49.766" endtime="20221207 16:26:49.878"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:03.837" endtime="20221207 16:26:49.879"/>
+</test>
+<test id="s1-t3" name="Scenario: Verify user able to save item by click Add to Wishlist button" line="30">
+<kw name="Navigate to Home" library="base_setup" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221207 16:26:49.880" level="INFO">Opening browser 'chrome' to base url 'https://www.bookdepository.com/'.</msg>
+<status status="PASS" starttime="20221207 16:26:49.879" endtime="20221207 16:27:03.014"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221207 16:27:03.014" endtime="20221207 16:27:03.703"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:49.879" endtime="20221207 16:27:03.703"/>
+</kw>
+<kw name="Given user already in home page" library="home_step">
+<kw name="Brand Logo Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BRAND_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:27:03.704" endtime="20221207 16:27:04.090"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${BRAND_LOGO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:27:04.139" level="INFO">Element 'class:brand-link' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:27:04.090" endtime="20221207 16:27:04.139"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:03.704" endtime="20221207 16:27:04.139"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:03.703" endtime="20221207 16:27:04.139"/>
+</kw>
+<kw name="When user click Sign in link" library="home_step">
+<kw name="Click Link SignIn" library="home_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_SIGNIN}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:04.140" level="INFO">Clicking link 'link:Sign in/Join'.</msg>
+<status status="PASS" starttime="20221207 16:27:04.140" endtime="20221207 16:27:11.051"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:04.139" endtime="20221207 16:27:11.052"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:04.139" endtime="20221207 16:27:11.052"/>
+</kw>
+<kw name="And user input email &quot;${VALID_EMAIL}&quot; and password &quot;${VALID_PASSWORD}&quot;" library="home_step" sourcename="User input email &quot;${email}&quot; and password &quot;${password}&quot;">
+<kw name="Input Email" library="home_page">
+<arg>${email}</arg>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>class:signin-iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20221207 16:27:11.053" level="INFO">Selecting frame 'class:signin-iframe'.</msg>
+<status status="PASS" starttime="20221207 16:27:11.052" endtime="20221207 16:27:12.564"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:12.565" level="INFO">Typing text 'farma.yudhi.prasetyo@gmail.com' into text field 'ap_email'.</msg>
+<status status="PASS" starttime="20221207 16:27:12.565" endtime="20221207 16:27:14.998"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:11.052" endtime="20221207 16:27:14.998"/>
+</kw>
+<kw name="Input valid Password" library="home_page">
+<arg>${password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:14.999" level="INFO">Typing password into text field 'ap_password'.</msg>
+<msg timestamp="20221207 16:27:16.543" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221207 16:27:17.286" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221207 16:27:14.999" endtime="20221207 16:27:17.286"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:14.998" endtime="20221207 16:27:17.286"/>
+</kw>
+<kw name="Click Button SignIn" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SIGNIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:17.286" level="INFO">Clicking button 'signInSubmit'.</msg>
+<status status="PASS" starttime="20221207 16:27:17.286" endtime="20221207 16:27:18.252"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20221207 16:27:18.252" endtime="20221207 16:27:21.275"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:17.286" endtime="20221207 16:27:21.276"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:11.052" endtime="20221207 16:27:21.276"/>
+</kw>
+<kw name="Then user is successfully login" library="home_step">
+<kw name="Welcome Message is Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:27:21.276" endtime="20221207 16:27:21.388"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:27:21.434" level="INFO">Element 'class:message-success&gt;strong' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:27:21.389" endtime="20221207 16:27:21.434"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<arg>Welcome back</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221207 16:27:21.435" level="INFO">Verifying element 'class:message-success&gt;strong' contains exact text 'Welcome back'.</msg>
+<status status="PASS" starttime="20221207 16:27:21.434" endtime="20221207 16:27:21.460"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:21.276" endtime="20221207 16:27:21.460"/>
+</kw>
+<kw name="Hello Message is Displayed" library="home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:27:21.461" endtime="20221207 16:27:21.601"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${HELLO_MESSAGE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221207 16:27:21.666" level="INFO">Element 'class:desktop-only&gt;span' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:27:21.601" endtime="20221207 16:27:21.666"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HELLO_MESSAGE}</arg>
+<arg>Hello Yudhi Prasetyo</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221207 16:27:21.667" level="INFO">Verifying element 'class:desktop-only&gt;span' contains exact text 'Hello Yudhi Prasetyo'.</msg>
+<status status="PASS" starttime="20221207 16:27:21.667" endtime="20221207 16:27:21.682"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:21.460" endtime="20221207 16:27:21.682"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:21.276" endtime="20221207 16:27:21.683"/>
+</kw>
+<kw name="When user search &quot;${KEYWORD2}&quot;" library="home_step" sourcename="User search &quot;${keyword}&quot;">
+<kw name="Input Search Keyword" library="home_page">
+<arg>${keyword}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_SEARCH}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:21.684" level="INFO">Typing text 'Harry potter and the prisoner of azkaban' into text field 'name:searchTerm'.</msg>
+<status status="PASS" starttime="20221207 16:27:21.684" endtime="20221207 16:27:21.985"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:21.684" endtime="20221207 16:27:21.985"/>
+</kw>
+<kw name="Click Button Search" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SEARCH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:21.986" level="INFO">Clicking button 'class:header-search-btn'.</msg>
+<status status="PASS" starttime="20221207 16:27:21.986" endtime="20221207 16:27:24.166"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:21.986" endtime="20221207 16:27:24.166"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:21.683" endtime="20221207 16:27:24.166"/>
+</kw>
+<kw name="And user click the item to the detail item page" library="home_step">
+<kw name="Click First Item" library="home_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SELECT_FIRST_ITEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:24.167" level="INFO">Clicking element 'class:book-item:first-of-type&gt;div.item-img'.</msg>
+<status status="PASS" starttime="20221207 16:27:24.167" endtime="20221207 16:27:25.470"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:24.166" endtime="20221207 16:27:25.470"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:24.166" endtime="20221207 16:27:25.471"/>
+</kw>
+<kw name="And user click button add to wishlist" library="home_step">
+<kw name="Click Button Add to Wishlist" library="home_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${BUTTON_ADD_TO_WISHLIST}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:25.472" level="INFO">Clicking link 'link:Add to wishlist'.</msg>
+<status status="PASS" starttime="20221207 16:27:25.471" endtime="20221207 16:27:26.525"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221207 16:27:29.527" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221207 16:27:26.526" endtime="20221207 16:27:29.527"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:25.471" endtime="20221207 16:27:29.528"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:25.471" endtime="20221207 16:27:29.528"/>
+</kw>
+<kw name="And user input wishlist name &quot;${WISHLIST_NAME}&quot;" library="home_step" sourcename="user input wishlist name &quot;${wishlistName}&quot;">
+<kw name="Input Wishlist Name" library="home_page">
+<arg>${wishlistName}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_WISHLIST_NAME}</arg>
+<arg>${wishlistName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:29.529" level="INFO">Typing text 'My Wishlist' into text field 'name:wishlistLabel'.</msg>
+<status status="PASS" starttime="20221207 16:27:29.528" endtime="20221207 16:27:29.697"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:29.528" endtime="20221207 16:27:29.697"/>
+</kw>
+<kw name="Click Button Add Modal" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_ADD_WISHLIST_MODAL}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:29.698" level="INFO">Clicking button 'class:btn.btn-primary.pull-right'.</msg>
+<status status="PASS" starttime="20221207 16:27:29.697" endtime="20221207 16:27:29.879"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:29.697" endtime="20221207 16:27:29.879"/>
+</kw>
+<kw name="Close Modal Wishlist" library="home_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_MODAL_WISHLIST}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:29.880" level="INFO">Clicking element 'class:close&gt;span'.</msg>
+<status status="PASS" starttime="20221207 16:27:29.879" endtime="20221207 16:27:29.976"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:29.879" endtime="20221207 16:27:29.976"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:29.528" endtime="20221207 16:27:29.976"/>
+</kw>
+<kw name="Then user see the item is already in wishlist page" library="home_step">
+<kw name="Click Link Wishlist" library="home_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_WISHLIST}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:29.977" level="INFO">Clicking link 'link:Wishlist'.</msg>
+<status status="PASS" starttime="20221207 16:27:29.976" endtime="20221207 16:27:31.601"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:29.976" endtime="20221207 16:27:31.602"/>
+</kw>
+<kw name="Get Item Wishlist Name" library="home_page">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ITEM_WISHLIST}</arg>
+<arg>Harry Potter and the Prisoner of Azkaban</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221207 16:27:31.602" level="INFO">Verifying element 'class:item-title&gt;a' contains exact text 'Harry Potter and the Prisoner of Azkaban'.</msg>
+<status status="PASS" starttime="20221207 16:27:31.602" endtime="20221207 16:27:31.622"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:31.602" endtime="20221207 16:27:31.623"/>
+</kw>
+<kw name="Clik Edit Wishlist" library="home_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LINK_EDIT_WISHLIST}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:31.623" level="INFO">Clicking element 'class:btn-edit-text'.</msg>
+<status status="PASS" starttime="20221207 16:27:31.623" endtime="20221207 16:27:31.812"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221207 16:27:36.814" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221207 16:27:31.812" endtime="20221207 16:27:36.816"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:31.623" endtime="20221207 16:27:36.817"/>
+</kw>
+<kw name="Click Delete Wishlist" library="home_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_DELETE_WISHLIST}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:27:36.819" level="INFO">Clicking link 'link:Delete wishlist'.</msg>
+<status status="PASS" starttime="20221207 16:27:36.819" endtime="20221207 16:27:37.023"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221207 16:27:40.025" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221207 16:27:37.024" endtime="20221207 16:27:40.026"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20221207 16:27:40.026" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20221207 16:27:40.026" endtime="20221207 16:27:40.030"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:36.818" endtime="20221207 16:27:40.030"/>
+</kw>
+<status status="PASS" starttime="20221207 16:27:29.976" endtime="20221207 16:27:40.030"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221207 16:27:40.030" endtime="20221207 16:27:40.134"/>
+</kw>
+<status status="PASS" starttime="20221207 16:26:49.879" endtime="20221207 16:27:40.134"/>
+</test>
+<status status="PASS" starttime="20221207 16:25:30.063" endtime="20221207 16:27:40.135"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Search Items">Search Items</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
